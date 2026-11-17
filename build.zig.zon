@@ -18,7 +18,8 @@
         // The core it validates over: the events an instance streams, and
         // the formats that read one.
         .strand = .{
-            .path = "../pkg/strand-schema",
+            .url = "git+https://github.com/pedronaugusto/strand#7658e111b4cfe55c0ca8c0cd38ffe3f84aca0c07",
+            .hash = "strand-0.15.0-8LNWVjZmMgCZ_nUQh6qOGakZj0P6EqUAxoI4EmnAifjr",
         },
         .aegis = .{
             .url = "git+https://github.com/pedronaugusto/aegis#f52eabef3ec6534c3a74bea3a3b7d95a91ce2581",

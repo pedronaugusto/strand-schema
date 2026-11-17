@@ -1,0 +1,66 @@
+.{
+    .name = .strand_schema,
+    .version = "0.1.0",
+    .minimum_zig_version = "0.17.0",
+    .fingerprint = 0xabbce5e723a695fd,
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "CHANGELOG.md",
+        "LICENSE",
+        "README.md",
+    },
+    // A library takes every dependency with its default options: options are
+    // the application's to set, so a program that reaches one of these
+    // through another package builds the same one.
+    .dependencies = .{
+        // The core it validates over: the events an instance streams, and
+        // the formats that read one.
+        .strand = .{
+            .path = "../pkg/strand-schema",
+        },
+        .aegis = .{
+            .url = "git+https://github.com/pedronaugusto/aegis#f52eabef3ec6534c3a74bea3a3b7d95a91ce2581",
+            .hash = "aegis-0.2.4-rsxouoquDQApwYDuGdd2YyEeTeNp6CnJoOZKdVCfc3jt",
+        },
+        // IDNA2008 for `idn-hostname` and `idn-email`.
+        .xenoglyph = .{
+            .url = "git+https://github.com/pedronaugusto/xenoglyph#ab4d38189cb723e4f102b611ed818380da56c750",
+            .hash = "xenoglyph-0.5.1-YKXZlcMCVABOnefwWET72nJLsmnBsMepiQwrB2Ll5HI9",
+        },
+        // uplink's codecs, `uplink.wire`: RFC 3986 and 3987 for URI
+        // references and the URI and IRI formats.
+        .uplink = .{
+            .url = "git+https://github.com/pedronaugusto/uplink#51e2436292a06b6d5351a625c6ac4fdc060d0450",
+            .hash = "uplink-0.10.2-0eVSJvm1HgAUfb0gFpU4sETXCtpFT8EPUnAWmREXUSGq",
+        },
+        // ECMAScript patterns in linear time: `pattern`,
+        // `patternProperties` and the `regex` format.
+        .spectra = .{
+            .url = "git+https://github.com/pedronaugusto/spectra#6dd0ffa18803ca10bd71315b6194064d2bc02056",
+            .hash = "spectra-0.0.0-t6DGCEXiDQDH7cmxrR5H6k3LrmHxPIzeISlgsRqiMzg9",
+        },
+        // RFC 3339's grammar: `date-time`, `date`, `time` and `duration`.
+        .almanac = .{
+            .url = "git+https://github.com/pedronaugusto/almanac#514f562cda12d4a6fb2915afe146a4474151bc6f",
+            .hash = "almanac-0.0.0-sQeSOWtoCgDbTpJJ6xIDc7nridOruMC_DFStdIuDe_z8",
+        },
+    },
+    .dev_dependencies = .{
+        // The JSON-Schema-Test-Suite, for the tests alone.
+        .json_schema_test_suite = .{
+            .url = "git+https://github.com/json-schema-org/JSON-Schema-Test-Suite#38dea932b02986f496345bf007108277777630bf",
+            .hash = "N-V-__8AAM4EEACCaWf61qxGMqrrNghGcq_MHInO3gTd63XY",
+            .lazy = true,
+        },
+        .preflight = .{
+            .url = "git+https://github.com/pedronaugusto/preflight?ref=ci-standard#9c180163c237b931ab8fe27c0a76f529a44c8435",
+            .hash = "preflight-0.18.6-LX1ZwkwSHQC1AH5TU4sPJTXdYkF5UTUsYFIZOqVt5ruC",
+        },
+        .shakedown = .{
+            .url = "git+https://github.com/pedronaugusto/shakedown#00abf589ba10f2b487f2410108d5163d1812a28e",
+            .hash = "shakedown-0.6.0-BR8U40MBHABZEg6HMvhEIfHO8-psDxf0p6lWMw9EzYdf",
+        },
+    },
+}

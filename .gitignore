@@ -1,0 +1,10 @@
+# Build output, and the packages `zig fetch` drops beside the project
+# when it is run from this directory.
+.zig-cache/
+zig-out/
+zig-pkg/
+
+# Worktrees of this repository.
+
+# macOS.
+.DS_Store

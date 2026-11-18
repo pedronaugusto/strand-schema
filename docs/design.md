@@ -1,7 +1,28 @@
 # strand_schema design
 
-How strand_schema validates, and what it holds itself to. It was a module of strand
-behind `-Dschema` until 0.1.0, when it became its own package.
+How strand_schema validates, and what it holds itself to.
+
+## Scope
+
+In: draft 2020-12 with every vocabulary, and 2019-09 and draft-07 by `$schema` (the
+dialects differ in the compiler's tables only; the evaluator is one); references by RFC
+3986 against `$id`, anchors and JSON Pointer fragments, the official meta-schemas
+built in, remote documents only through the caller's `Loader`; `flag` and `basic`
+output; every format strand reads, and a Zig value through the core's encoder.
+
+Out, by decision:
+
+- Drafts 4 and 6: rare in current schemas, and their differences would be more
+  compiler tables.
+- Custom vocabularies and keywords: a meta-schema requiring a vocabulary strand_schema
+  does not know is refused, as the specification asks.
+- CDDL for CBOR, until a consumer asks; ZON, whose validation is decoding into its Zig
+  type.
+- Fetching remote schemas: the caller's loader does it.
+
+`Limits` bound what a hostile schema or instance can buy: the schema's bytes and
+subschemas, the reference chain, the depth, the evaluation's frames and state, a
+number's exponent, and the errors kept.
 
 ## Validation
 

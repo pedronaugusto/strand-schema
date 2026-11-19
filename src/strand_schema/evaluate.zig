@@ -497,8 +497,10 @@ fn scalar(e: *Evaluator, at: *Location, kind: Kind, value: Value) Error!void {
     }
 }
 
+/// A string instance's length in code points. strand hands over text only as UTF-8 (each
+/// format's decoder or its core checks it), so a string that is not cannot reach here.
 fn codePoints(s: []const u8) u64 {
-    return std.unicode.utf8CountCodepoints(s) catch s.len;
+    return std.unicode.utf8CountCodepoints(s) catch aegis.assert.never("strand checks every text it hands over as UTF-8");
 }
 
 /// `type`, `const` and `enum`, in every slot.

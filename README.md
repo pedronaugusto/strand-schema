@@ -27,6 +27,7 @@ annotation that every validation passing through it reports. Every bound is a
 subschemas and reference chains.
 [examples/validate.zig](examples/validate.zig) checks a tool's result.
 
+<!-- BEGIN GENERATED zig build docs -- validate -->
 ```zig
 const strand = @import("strand");
 const strand_schema = @import("strand_schema");
@@ -56,6 +57,7 @@ std.debug.assert(std.mem.eql(u8, errors.records[0].instance_location, "/city"));
 const yaml = "city: Porto\ncelsius: 18\n";
 std.debug.assert(try schema.validate(io, scratch.allocator(), strand.yaml, .init(yaml), .{ .flag = null }));
 ```
+<!-- END GENERATED -->
 
 
 ## Using it
@@ -69,8 +71,7 @@ exe.root_module.addImport("strand", strand.module("strand"));
 ```
 
 strand_schema takes strand, uplink, spectra, almanac, aegis and xenoglyph with their
-default options, as every library of the family takes its dependencies: options are the
-application's to set. A program that reaches strand through another package as well builds
+default options: options are the application's to set. A program that reaches strand through another package as well builds
 one strand, and nothing of uplink, spectra or almanac compiles unless validation reaches it.
 
 ## Stability

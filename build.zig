@@ -94,7 +94,7 @@ pub fn dev(b: *std.Build, tools: type) void {
 
     tools.preflight.addCi(b, p, .{
         .tests = test_step,
-        .hardened = .{ .fuzz_step = "test" },
+        .hardened = .{ .fuzz_step = "test", .tsan_step = "test" },
         .portable_tests = true,
         // `bay bench` times the observations by hand; `bay test` runs each
         // row once as a smoke.

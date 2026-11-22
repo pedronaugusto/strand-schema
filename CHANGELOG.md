@@ -12,3 +12,7 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   strand's `strand_schema` module behind `-Dschema` (strand a49e6c5). Its root is
   `src/strand_schema.zig`; its API is unchanged. It takes every dependency with its default
   options, so a program with strand_schema and another strand user builds one strand.
+- Its development under preflight's gate: ci/preflight.json (`"policy": "family"`, the README's
+  `validate` region, `zig build check-consumer` among the extra checks) and ci/workflow.json
+  with the hardened profile; ci.yml generated (`bay dev generate`). The hardened and
+  hardened-tsan legs pass.

@@ -1,0 +1,38 @@
+{
+  "policy": "family",
+  "sources": [
+    "src"
+  ],
+  "test_roots": [
+    "src/strand_schema.zig"
+  ],
+  "test_support": [],
+  "test_dependencies": [
+    "shakedown",
+    "json_schema_suite"
+  ],
+  "function_exceptions": {},
+  "layout_exceptions": {},
+  "glint_paths": [
+    "src",
+    "build.zig"
+  ],
+  "docs": {
+    "zig build docs -- validate": {
+      "source": "examples/validate.zig",
+      "region": "validate",
+      "imports": [
+        "strand",
+        "strand_schema"
+      ]
+    }
+  },
+  "extra_checks": [
+    [
+      "zig",
+      "build",
+      "check-consumer"
+    ]
+  ],
+  "shipped": {}
+}

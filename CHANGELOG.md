@@ -15,4 +15,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Its development under preflight's gate: ci/preflight.json (`"policy": "family"`, the README's
   `validate` region, `zig build check-consumer` among the extra checks) and ci/workflow.json
   with the hardened profile; ci.yml generated (`bay dev generate`). The hardened and
-  hardened-tsan legs pass.
+  hardened-tsan legs pass. The JSON-Schema-Test-Suite, test data and no package, is pinned
+  as GitHub's archive of commit 38dea93, the same files under the same hash.

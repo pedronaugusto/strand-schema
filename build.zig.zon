@@ -51,7 +51,7 @@
     .dev_dependencies = .{
         // The JSON-Schema-Test-Suite, for the tests alone.
         .json_schema_test_suite = .{
-            .url = "git+https://github.com/json-schema-org/JSON-Schema-Test-Suite#38dea932b02986f496345bf007108277777630bf",
+            .url = "https://github.com/json-schema-org/JSON-Schema-Test-Suite/archive/38dea932b02986f496345bf007108277777630bf.tar.gz",
             .hash = "N-V-__8AAM4EEACCaWf61qxGMqrrNghGcq_MHInO3gTd63XY",
             .lazy = true,
         },
